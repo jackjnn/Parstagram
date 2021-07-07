@@ -16,6 +16,7 @@ import com.parse.ParseQuery;
 import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class FeedActivity extends AppCompatActivity {
@@ -25,6 +26,8 @@ public class FeedActivity extends AppCompatActivity {
     private RecyclerView rvPosts;
     public static final String TAG = "FeedActivity";
     private SwipeRefreshLayout swipeContainer;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,7 @@ public class FeedActivity extends AppCompatActivity {
         // query posts from Parstagram
         queryPosts();
     }
+        //TODO: Solve error with refresh
         //REFRESH IMPLEMENTATION
         /**
         // Lookup the swipe container view
