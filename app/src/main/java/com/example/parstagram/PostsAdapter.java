@@ -17,6 +17,7 @@ import java.util.List;
 
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
 
+
     private Context context;
     private List<Post> posts;
 
@@ -61,12 +62,14 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         private TextView tvUsername;
         private ImageView ivImage;
         private TextView tvDescription;
+        private TextView tvCreatedAt;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvUsername = itemView.findViewById(R.id.tvUsername);
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescription);
+            tvCreatedAt = itemView.findViewById(R.id.tvCreatedAt);
 
         }
 
@@ -74,12 +77,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             // Bind the post data to the view elements
             tvDescription.setText(post.getDescription());
             tvUsername.setText(post.getUser().getUsername());
-
-            //TODO: Right place for this?
-            //https://hackmd.io/@tejen/S1SINHTsd, step 4
-            tvCreatedAt.setText(timeAgo);
+            tvCreatedAt.setText(post.getTimeAgo());
 
             ParseFile image = post.getImage();
+
             if (image != null) {
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }

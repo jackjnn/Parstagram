@@ -78,10 +78,9 @@ public class Post extends ParseObject {
         return "";
     }
 
-    //TODO: Is this in the right place??
-    //https://hackmd.io/@tejen/S1SINHTsd, step 3
-    Date createdAt = Post.getCreatedAt();
-    String timeAgo = Post.calculateTimeAgo(createdAt);
+    public String getTimeAgo (){
+        return calculateTimeAgo(getCreatedAt());
+    }
 
 
 }
