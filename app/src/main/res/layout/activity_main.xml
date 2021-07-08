@@ -14,9 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/description"
-        android:autofillHints=""
-        android:inputType="" />
+        android:hint="@string/description" />
 
     <Button
         android:id="@+id/btnCaptureImage"

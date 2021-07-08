@@ -14,7 +14,7 @@ public class ParseApplication extends Application {
         // Register your parse models
         ParseObject.registerSubclass(Post.class);
 
-        /*
+
         Parse.initialize(new Parse.Configuration.Builder(this)
                         .applicationId(getString(R.string.back4app_app_id))
                         .clientKey(getString(R.string.back4app_client_key))
@@ -22,14 +22,16 @@ public class ParseApplication extends Application {
                         .build()
         );
 
-         */
 
+        /*
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId(BuildConfig.parseAppId)
                 .clientKey(BuildConfig.clientKey)
                 .server(BuildConfig.server)
                 .build()
         );
+
+         */
 
     }
 }
