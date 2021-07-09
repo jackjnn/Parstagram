@@ -53,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
 
-        btnCaptureImage .setOnClickListener(new View.OnClickListener() {
+        //check that we are getting data from parse
+
+        btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launchCamera();
@@ -107,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         // wrap File object into a content provider
         // required for API >= 24
         // See https://guides.codepath.com/android/Sharing-Content-with-Intents#sharing-files-with-api-24-or-higher
-        Uri fileProvider = FileProvider.getUriForFile(MainActivity.this, "com.example.Parstagram", photoFile);
+        Uri fileProvider = FileProvider.getUriForFile(MainActivity.this, "com.example.fileprovider", photoFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
 
         // If you call startActivityForResult() using an intent that no app can handle, your app will crash.
