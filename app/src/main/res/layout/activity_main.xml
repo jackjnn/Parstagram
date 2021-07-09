@@ -1,55 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="16dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        app:srcCompat="@drawable/parstagram_logo" />
+
     <EditText
-        android:id="@+id/etDescription"
+        android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/description" />
+        android:hint="@string/hint_username" />
 
-    <Button
-        android:id="@+id/btnCaptureImage"
+    <EditText
+        android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/take_picture"/>
-
-    <ImageView
-        android:id="@+id/ivPostImage"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:contentDescription="@string/image_for_the_post"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"/>
 
     <Button
-        android:id="@+id/btnSubmit"
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/submit"/>
+        android:layout_weight="1"
+        android:text="@string/text_login"/>
 
-    <Button
-        android:id="@+id/btnLogout"
+    <TextView
+        android:id="@+id/tvNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/log_out"/>
+        android:layout_gravity="end"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:text="First time?"/>
 
     <Button
-        android:id="@+id/btnMain2Feed"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/feed"/>
+        android:layout_gravity="end"
+        android:layout_weight="1"
+        android:text="Sign Up"/>
+
+
+
 
 </LinearLayout>
-
-
-
-
-

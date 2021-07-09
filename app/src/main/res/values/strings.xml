@@ -8,8 +8,6 @@
     <string name="take_picture">Take Picture</string>
     <string name="image_for_the_post">image for the post</string>
     <string name="submit">submit</string>
-
-    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
     <!-- Change the following strings as required -->
     <string name="feed">Feed</string>
 </resources>
