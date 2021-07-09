@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSubmit;
     private Button btnLogout;
     private File photoFile;
+    private Button btnMain2Feed;
     private String photoFileName = "photo.jpg";
 
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         btnCaptureImage = findViewById(R.id.btnCaptureImage);
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
+        btnMain2Feed = findViewById(R.id.btnMain2Feed);
 
         //check that we are getting data from parse
 
@@ -92,6 +94,21 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Successfully logged out!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        btnMain2Feed.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick Main2Feed button");
+                goFeedActivity();
+                Toast.makeText(MainActivity.this, "On to Feed!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void goFeedActivity() {
+        Intent j = new Intent(this, FeedActivity.class);
+        startActivity(j);
+        finish();
     }
 
     private void goLoginActivity() {
@@ -171,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /*
     private void queryPosts() {
         // Specify which class to query
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
@@ -188,4 +206,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    */
 }

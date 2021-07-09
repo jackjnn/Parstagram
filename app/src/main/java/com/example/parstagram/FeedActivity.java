@@ -26,8 +26,7 @@ public class FeedActivity extends AppCompatActivity {
     private RecyclerView rvPosts;
     public static final String TAG = "FeedActivity";
     private SwipeRefreshLayout swipeContainer;
-
-
+    //public static final String TAG = "PostsServerClient";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +34,21 @@ public class FeedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         rvPosts = findViewById(R.id.rvPosts);
+
+        //initializing array to hold posts then create posts adapter
         allPosts = new ArrayList<>();
         adapter = new PostsAdapter(this, allPosts);
-        // set the adapter on the recycler view
-        rvPosts.setAdapter(adapter);
+
         // set the layout manager on the recycler view
         rvPosts.setLayoutManager(new LinearLayoutManager(this));
+
+        // set the adapter on the recycler view
+        rvPosts.setAdapter(adapter);
+
         // query posts from Parstagram
         queryPosts();
-    }
-        //TODO: Solve error with refresh
+
         //REFRESH IMPLEMENTATION
-        /**
         // Lookup the swipe container view
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
         // Setup refresh listener which triggers new data loading
@@ -64,29 +66,49 @@ public class FeedActivity extends AppCompatActivity {
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
+
+
     }
 
 
+
     public void fetchTimelineAsync(int page) {
-        // Send the network request to fetch the updated data
-        // `client` here is an instance of Android Async HTTP
-        // getHomeTimeline is an example endpoint.
-        client.getHomeTimeline(new JsonHttpResponseHandler() {
-            public void onSuccess(JSONArray json) {
-                // Remember to CLEAR OUT old items before appending in the new ones
-                adapter.clear();
-                // ...the data has come back, add new items to your adapter...
-                adapter.addAll(allPosts);
-                // Now we call setRefreshing(false) to signal refresh has finished
-                swipeContainer.setRefreshing(false);
+        adapter.clear();
+        //the data has come back, add new items to your adapter
+        queryPosts();
+        // Now we call setRefreshing(false) to signal refresh has finished
+        swipeContainer.setRefreshing(false);
+    }
+    /*
+
+    private void fetchTimelineAsync() {
+        queryPosts(new FindCallback<Post>() {
+
+            @Override
+            public void done(List<Post> posts, ParseException e) {
+                if (e != null){
+                    Log.e(TAG,"Cannot get posts", e);
+                    return;
+                } else {
+                    for (Post post : posts){
+                        Log.i(TAG, "Post: " + post.getDescription() + ", username: " + post.getUser().getUsername());
+                    }
+                    adapter.clear();
+                    // save received posts to list and notify adapter of new data
+                    adapter.addAll(posts);
+                }
             }
 
             public void onFailure(Throwable e) {
                 Log.d("DEBUG", "Fetch timeline error: " + e.toString());
             }
         });
+        // Now we call setRefreshing(false) to signal refresh has finished
+        if (swipeContainer.isRefreshing()){
+            swipeContainer.setRefreshing(false);
+        }
     }
-     */
+    */
 
 
     private void queryPosts() {
@@ -106,17 +128,18 @@ public class FeedActivity extends AppCompatActivity {
                 if (e != null) {
                     Log.e(TAG, "Issue with getting posts", e);
                     return;
+                } else {
+                    // debug: print every post description to logcat
+                    for (Post post : posts) {
+                        Log.i(TAG, "Post: " + post.getDescription() + ", username: " + post.getUser().getUsername());
+                    }
+                    // save received posts to list and notify adapter of new data
+                    allPosts.addAll(posts);
+                    adapter.notifyDataSetChanged();
                 }
-
-                // for debugging purposes let's print every post description to logcat
-                for (Post post : posts) {
-                    Log.i(TAG, "Post: " + post.getDescription() + ", username: " + post.getUser().getUsername());
-                }
-
-                // save received posts to list and notify adapter of new data
-                allPosts.addAll(posts);
-                adapter.notifyDataSetChanged();
             }
         });
     }
+
+
 }
