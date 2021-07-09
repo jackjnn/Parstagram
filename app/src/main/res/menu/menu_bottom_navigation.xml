@@ -2,12 +2,13 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <item
         android:id="@+id/action_home"
         android:icon="@drawable/instagram_home_filled_24"
+        app:tabBackground = "@drawable/tab_color_selector"
         android:title="Home"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
+
     <item
         android:id="@+id/action_compose"
         android:icon="@drawable/addnewpost"

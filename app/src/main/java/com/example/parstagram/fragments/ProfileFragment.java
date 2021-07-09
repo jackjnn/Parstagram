@@ -53,7 +53,7 @@ public class ProfileFragment extends Fragment {
         // find current user and set handle
         ParseUser user = ParseUser.getCurrentUser();
         tvHandle = view.findViewById(R.id.tvHandle);
-        tvHandle.setText("@" + user.getUsername());
+        tvHandle.setText("Parstagram User: " + user.getUsername());
         rvGrid = view.findViewById(R.id.rvGrid);
         postsList = new ArrayList<>();
 

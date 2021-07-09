@@ -19,8 +19,8 @@ import java.util.List;
 
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
 
-    private Context context;
-    private List<Post> posts;
+    private final Context context;
+    private final List<Post> posts;
 
     @NonNull
     @Override
@@ -84,9 +84,9 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         }
 
         public void bind(Post post) {
-            // todo use better string formatting
-            tvHandle.setText("@" + post.getUser().getUsername());
-            tvHandleBottom.setText("@" + post.getUser().getUsername() + ":");
+
+            //tvHandle.setText("@" + post.getUser().getUsername());
+
             tvCaption.setText(post.getCaption());
             // load image
             ParseFile image = post.getImage();
@@ -95,7 +95,12 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                         .load(image.getUrl())
                         .into(ivImage);
             }
-            ParseFile profile = post.getUser().getParseFile("profile");
+
+            ParseFile profile = null;
+            if(post.getUser() != null) {
+                tvHandleBottom.setText(post.getUser().getUsername());
+                profile = post.getUser().getParseFile("profile");
+            }
             if (profile != null) {
                 Glide.with(context)
                         .load(profile.getUrl())

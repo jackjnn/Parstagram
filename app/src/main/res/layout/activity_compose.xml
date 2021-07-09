@@ -7,9 +7,11 @@
     tools:context=".ComposeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
@@ -17,33 +19,28 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:menu="@menu/top_app_bar"
-            app:navigationIcon="@drawable/ic_menu_24"/>
+            app:logo="@drawable/parstagram_logo"/>
             <!--app:title="random Title" -->
-
-        <ImageView
-            android:id="@+id/appbar_title_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:logo="@drawable/parstagram_logo"
-            android:contentDescription="logo" />
 
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
     <FrameLayout
         android:id="@+id/flContainer"
-        android:layout_width="405dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:itemIconTint="@color/black"
         app:menu="@menu/menu_bottom_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

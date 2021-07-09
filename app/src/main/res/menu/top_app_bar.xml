@@ -1,9 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <item
         android:id="@+id/appbar_logo"
-        android:icon="@drawable/parstagram_logo"
+        android:icon="@drawable/ic_search"
         app:showAsAction="ifRoom"
         android:title="appbar logo" />
 
@@ -17,6 +18,6 @@
         android:id="@+id/appbar_profile"
         android:icon="@drawable/profileicon"
         android:title="appbar_profile"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom" />
 
 </menu>
