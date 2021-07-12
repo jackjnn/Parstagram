@@ -23,9 +23,9 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Parstagram">
 
-        <activity android:name=".ComposeActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.ComposeActivity" />
+        <activity android:name=".activity.SignupActivity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

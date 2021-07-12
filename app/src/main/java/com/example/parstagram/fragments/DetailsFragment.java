@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.parstagram.Post;
+import com.example.parstagram.model.Post;
 import com.example.parstagram.R;
 import com.parse.ParseFile;
 import com.parse.ParseUser;

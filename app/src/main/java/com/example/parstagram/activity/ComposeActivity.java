@@ -1,4 +1,4 @@
-package com.example.parstagram;
+package com.example.parstagram.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.parstagram.model.Post;
+import com.example.parstagram.R;
 import com.example.parstagram.fragments.ComposeFragment;
 import com.example.parstagram.fragments.DetailsFragment;
 import com.example.parstagram.fragments.FeedFragment;

@@ -18,9 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.parstagram.GridAdapter;
-import com.example.parstagram.MainActivity;
-import com.example.parstagram.Post;
+import com.example.parstagram.adapter.GridAdapter;
+import com.example.parstagram.activity.MainActivity;
+import com.example.parstagram.model.Post;
 import com.example.parstagram.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;

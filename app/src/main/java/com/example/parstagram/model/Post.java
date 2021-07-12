@@ -1,4 +1,4 @@
-package com.example.parstagram;
+package com.example.parstagram.model;
 
 import android.util.Log;
 

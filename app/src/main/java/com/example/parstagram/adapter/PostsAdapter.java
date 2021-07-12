@@ -1,4 +1,4 @@
-package com.example.parstagram;
+package com.example.parstagram.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.parstagram.R;
+import com.example.parstagram.activity.ComposeActivity;
+import com.example.parstagram.model.Post;
 import com.parse.ParseFile;
 
 import java.util.List;

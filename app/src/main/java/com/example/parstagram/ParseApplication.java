@@ -2,6 +2,7 @@ package com.example.parstagram;
 
 import android.app.Application;
 
+import com.example.parstagram.model.Post;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
@@ -21,17 +22,5 @@ public class ParseApplication extends Application {
                         .server(getString(R.string.back4app_server_url))
                         .build()
         );
-
-
-        /*
-        Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId(BuildConfig.parseAppId)
-                .clientKey(BuildConfig.clientKey)
-                .server(BuildConfig.server)
-                .build()
-        );
-
-         */
-
     }
 }

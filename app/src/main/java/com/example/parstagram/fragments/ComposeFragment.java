@@ -22,7 +22,7 @@ import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import com.example.parstagram.BitmapScaler;
-import com.example.parstagram.Post;
+import com.example.parstagram.model.Post;
 import com.example.parstagram.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;

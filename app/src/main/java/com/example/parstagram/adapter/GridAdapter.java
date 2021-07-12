@@ -1,4 +1,4 @@
-package com.example.parstagram;
+package com.example.parstagram.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.parstagram.R;
+import com.example.parstagram.model.Post;
 import com.parse.ParseFile;
 
 import java.util.List;
