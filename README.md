@@ -4,7 +4,7 @@
 
 Time spent: **30** hours spent in total
 
-## User Stories
+## User Stories...
 
 The following **required** functionality is completed:
 
@@ -44,7 +44,7 @@ The following **additional** features are implemented:
 - [x] Implemented custom logo in app bar
 
 
-## Video Walkthrough
+## Video Walkthrough...
 
 Here's a walkthrough of implemented user stories:
 
